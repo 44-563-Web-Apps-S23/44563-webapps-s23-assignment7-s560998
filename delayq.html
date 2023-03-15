@@ -76,15 +76,15 @@
   }
   function promote(){
         var queueItems = document.getElementsByClassName("delayQ")
-        var length = queueItems.length
-        var rand = Math.floor(Math.random()*(length))
+        var len = queueItems.length
+        var ran = Math.floor(Math.random()*(len))
         let b1= document.createElement("div")
-		b1.innerHTML = queueItems[rand].textContent
-		b1.style.color = "blue"
+		b1.innerHTML = queueItems[ran].textContent
+		b1.style.color = "green"
         b1.className = "delayQ"		
 		let container = document.getElementById('target')
-         queueItems[random].remove()
-        container.insertBefore(element,queueItems[0])
+        queueItems[ran].remove()
+        container.insertBefore(b1,queueItems[0])
     }
 
  
