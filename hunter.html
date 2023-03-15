@@ -54,50 +54,122 @@
   <p>Click on the bushes to search for the mouse, beware the cat</p>
   <p id = "bushes">Number of bushes checked is zero.</p>  
   <p id = "penalty">Penalty is zero.</p>
-  <p>Click for help.</p>
+  <p onclick="help()">Click for help.</p>
   <p id = "help">Help report</p>
 
 </div>
 <div class="container">
     <div class="d-flex">
-    <div><img  width=110 height=110  onclick="butcheck(0)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(1)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(2)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(3)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(4)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(5)" src="smallbush.jpg"></div>
+    <div><img  id="pic0" width=110 height=110  onclick="check(0)" src="smallbush.jpg"></div>
+    <div><img  id="pic1" width=110 height=110  onclick="check(1)" src="smallbush.jpg"></div>
+    <div><img  id="pic2" width=110 height=110  onclick="check(2)" src="smallbush.jpg"></div>
+    <div><img  id="pic3" width=110 height=110  onclick="check(3)" src="smallbush.jpg"></div>
+    <div><img  id="pic4" width=110 height=110  onclick="check(4)" src="smallbush.jpg"></div>
+    <div><img  id="pic5" width=110 height=110  onclick="check(5)" src="smallbush.jpg"></div>
      </div>
   </div>
   <div class="container">
     <div class="d-flex">
-    <div><img  width=110 height=110  onclick="butcheck(6)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(7)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(8)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(9)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(10)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(11)" src="smallbush.jpg"></div>
+    <div><img  id="pic6"  width=110 height=110  onclick="check(6)" src="smallbush.jpg"></div>
+    <div><img  id="pic7" width=110 height=110  onclick="check(7)" src="smallbush.jpg"></div>
+    <div><img  id="pic8" width=110 height=110  onclick="check(8)" src="smallbush.jpg"></div>
+    <div><img  id="pic9" width=110 height=110  onclick="check(9)" src="smallbush.jpg"></div>
+    <div><img  id="pic10" width=110 height=110  onclick="check(10)" src="smallbush.jpg"></div>
+    <div><img  id="pic11" width=110 height=110  onclick="check(11)" src="smallbush.jpg"></div>
      </div>
   </div>
   <div class="container">
     <div class="d-flex">
-    <div><img  width=110 height=110  onclick="butcheck(12)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(13)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(14)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(15)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(16)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(17)" src="smallbush.jpg"></div>
+    <div><img id="pic12" width=110 height=110  onclick="check(12)" src="smallbush.jpg"></div>
+    <div><img id="pic13" width=110 height=110  onclick="check(13)" src="smallbush.jpg"></div>
+    <div><img id="pic14" width=110 height=110  onclick="check(14)" src="smallbush.jpg"></div>
+    <div><img id="pic15" width=110 height=110  onclick="check(15)" src="smallbush.jpg"></div>
+    <div><img id="pic16" width=110 height=110  onclick="check(16)" src="smallbush.jpg"></div>
+    <div><img id="pic17" width=110 height=110  onclick="check(17)" src="smallbush.jpg"></div>
      </div>
   </div>
   <div class="container">
     <div class="d-flex">
-    <div><img  width=110 height=110  onclick="butcheck(18)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(19)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(20)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(21)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(22)" src="smallbush.jpg"></div>
-    <div><img  width=110 height=110  onclick="butcheck(23)" src="smallbush.jpg"></div>
+    <div><img id="pic18" width=110 height=110  onclick="check(18)" src="smallbush.jpg"></div>
+    <div><img id="pic19" width=110 height=110  onclick="check(19)" src="smallbush.jpg"></div>
+    <div><img id="pic20" width=110 height=110  onclick="check(20)" src="smallbush.jpg"></div>
+    <div><img id="pic21" width=110 height=110  onclick="check(21)" src="smallbush.jpg"></div>
+    <div><img id="pic22" width=110 height=110  onclick="check(22)" src="smallbush.jpg"></div>
+    <div><img id="pic23" width=110 height=110  onclick="check(23)" src="smallbush.jpg"></div>
      </div>
   </div>
+  <script>
+  var ids=["pic0","pic1","pic2","pic3","pic4","pic5","pic6","pic7","pic8","pic9","pic10",
+    "pic11","pic12","pic13","pic14","pic15","pic16","pic17","pic18","pic19","pic20","pic21","pic22","pic23"]
+    var checkCount = 0
+    var penalty = 0
+    var lastCheck = 0
+    var mouseLocation = 13
+    var catLocation = 21
+    let gameOver = false
+    function check(position){
+        if(gameOver){
+            return;
+        }
+        var id = ids[position]
+        img = document.getElementById(id);
+        if(position==mouseLocation){
+            img.src = "mouse.jpg";
+            gameOver = true;
+            penalty -= 3;
 
+        }
+        else if(position==catLocation){
+            img.src = "catliketiger.jpg";
+            gameOver = true;
+            penalty += 4;
+        }
+        else{
+            img.src = "grass.jpg";
+        }
+        checkCount++;
+        penalty++;
+
+        document.getElementById("bushes").innerHTML = "Bushes checked is: " +checkCount;
+        document.getElementById("penalty").innerHTML = "penalty: "+penalty;
+        lastCheck = position;
+        }
+        function help(){
+            const mouseR = Math.floor(mouseLocation/4);
+            const catR = Math.floor(catLocation/4);
+            
+	    const catC = catLocation%6;
+            const mouseC = mouseLocation%6;
+
+            const lastRow = Math.floor(lastCheck/4);
+            const lastCol = lastCheck%6;
+           
+            penalty = penalty+2;
+            document.getElementById("penalty").innerHTML = "Penalty is "+penalty;
+		
+     	if((Math.abs(mouseC-lastCol)<=1)&&Math.abs(mouseR-lastRow)<=1 &&( Math.abs(catR-mouseR)>1||Math.abs(catC-mouseC)>1)){
+                document.getElementById("help").innerHTML="squeak";
+            }
+            
+           else if(( Math.abs(catC-lastCol)<=1)&&(Math.abs(catR-lastRow)<=1) &&(Math.abs(catR-mouseR)>1||Math.abs(catC-mouseC)>1)){
+                document.getElementById("help").innerHTML= "meow";
+            }
+           
+            
+           else{
+            document.getElementById("help").innerHTML= "sorry, no help available";
+           }
+        }
+        function newGame(){
+            mouseLocation = Math.floor(Math.random()*24)
+            catLocation = Math.floor(Math.random()*24)
+            document.getElementById("bushes").innerHTML = "Bushes checked is 0"
+            document.getElementById("penalty").innerHTML = "Penalty is 0"
+            for(var i=0;i<=23;i++){
+                document.getElementById(ids[i]).src="smallbush.jpg"
+                
+            }
+        }
+  </script>
 </body>
 </html>
