@@ -56,6 +56,7 @@
   <p id = "penalty">Penalty is zero.</p>
   <p onclick="help()">Click for help.</p>
   <p id = "help">Help report</p>
+  <button type="button" onclick="restart()">New Game</button>
 
 </div>
 <div class="container">
@@ -117,7 +118,6 @@
             img.src = "mouse.jpg";
             gameOver = true;
             penalty -= 3;
-
         }
         else if(position==catLocation){
             img.src = "catliketiger.jpg";
@@ -160,7 +160,7 @@
             document.getElementById("help").innerHTML= "sorry, no help available";
            }
         }
-        function newGame(){
+        function restart(){
             mouseLocation = Math.floor(Math.random()*24)
             catLocation = Math.floor(Math.random()*24)
             document.getElementById("bushes").innerHTML = "Bushes checked is 0"
